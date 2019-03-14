@@ -8,11 +8,16 @@ import android.provider.MediaStore
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        shareButton.setOnClickListener {
+            shareText()
+        }
     }
 
     val REQUEST_IMAGE_CAPTURE = 1
@@ -37,5 +42,16 @@ class MainActivity : AppCompatActivity() {
 
     fun onImageClicked(view: View) {
         dispatchTakePictureIntent()
+    }
+
+    //https://developer.android.com/training/sharing/send
+    private fun shareText() {
+        val message = messageToShare.text.toString()
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, message)
+            type = "text/plain"
+        }
+        startActivity(sendIntent)
     }
 }

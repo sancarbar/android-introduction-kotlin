@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">IntroductionAndroid Kotlin</string>
+    <string name="escriba_texto">escriba texto</string>
+    <string name="share_text">Compartir</string>
 </resources>
