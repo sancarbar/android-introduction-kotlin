@@ -2,4 +2,6 @@
     <string name="app_name">IntroductionAndroid Kotlin</string>
     <string name="escriba_texto">escriba texto</string>
     <string name="share_text">Compartir</string>
+    <string name="hello_android_meetup_bogota">Hello Android Meetup Bogota!</string>
+    <string name="second_activity">Second Activity</string>
 </resources>

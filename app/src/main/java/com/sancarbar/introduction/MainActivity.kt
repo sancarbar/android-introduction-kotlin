@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
+import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_main.*
 
+
+const val EXTRA_MESSAGE = "com.sancarbar.introduction.MESSAGE"
 
 class MainActivity : AppCompatActivity() {
 
@@ -54,4 +57,16 @@ class MainActivity : AppCompatActivity() {
         }
         startActivity(sendIntent)
     }
+
+    //https://developer.android.com/training/basics/firstapp/starting-activity#kotlin
+    fun onSecondActivityClicked(view: View) {
+
+        val message = messageToShare.text.toString()
+        val intent = Intent(this, SecondActivity::class.java).apply {
+            putExtra(EXTRA_MESSAGE, message)
+        }
+        startActivity(intent)
+    }
+
+
 }
